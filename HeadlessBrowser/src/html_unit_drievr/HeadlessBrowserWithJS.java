@@ -1,21 +1,19 @@
-package headlessBrowser;
+package html_unit_drievr;
 
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-public class HeadlessBrowser 
+public class HeadlessBrowserWithJS 
 {
 	public static void main(String[] args) 
 	{
-		//WebDriver driver = new ChromeDriver(); // To launch ChromeBrowser
+		HtmlUnitDriver driver = new HtmlUnitDriver();
+		driver.setJavascriptEnabled(true);
 		
-		//To launch headless browser : create Object of HtmlUnitDriver() and upcast it to WebDriver
-		WebDriver driver = new HtmlUnitDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
